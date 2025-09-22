@@ -7,56 +7,97 @@
   <meta name="description" content="We pick up after 5 pm, qualify, and live-transfer urgent jobs. You only pay when you close." />
   <style>
     :root{
-      --bg:#0b1222; --ink:#e6eef8; --muted:#9bb0c9; --brand:#27c07d; --inkdark:#0b1222;
+      --ink:#0b1222; --muted:#667085; --line:#e6e7eb; --brand:#1a9f6a; --brandText:#071b14;
+      --radius:14px; --shadow:0 8px 30px rgba(0,0,0,.06);
     }
     *{box-sizing:border-box}
-    html,body{height:100%}
     body{
-      margin:0; font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      color:var(--ink); background:radial-gradient(900px 500px at 15% -10%, rgba(39,192,125,.18), transparent 60%), var(--bg);
-      display:grid; place-items:center;
+      margin:0; font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif; color:var(--ink); background:#fff;
     }
-    .wrap{width:min(720px,92vw); text-align:center; padding:28px 0}
-    h1{font-size:34px; line-height:1.15; margin:.1em 0 .35em}
-    p.sub{color:var(--muted); margin:.2em 0 1.1em; font-size:17px}
+    .wrap{max-width:820px; margin:0 auto; padding:32px 20px}
+    header{display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:18px}
+    .brand{display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit}
+    .logo{width:40px; height:40px; border-radius:10px; background:#1a9f6a12; display:grid; place-items:center; border:1px solid var(--line)}
+    .logo svg{display:block}
+    .brand h1{font-size:18px; margin:0}
+    .tag{font-size:12px; color:var(--muted)}
+    .panel{
+      border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow);
+      padding:24px; background:#fff;
+    }
+    h2{font-size:28px; line-height:1.2; margin:.2em 0 .4em}
+    p.sub{color:var(--muted); margin:0 0 16px}
     .cta{
-      display:inline-block; padding:12px 18px; border-radius:12px; font-weight:700; text-decoration:none;
-      background:var(--brand); color:var(--inkdark); transition:.15s transform ease, .15s box-shadow ease;
-      box-shadow:0 10px 30px rgba(39,192,125,.35);
+      display:inline-block; padding:12px 18px; border-radius:10px; text-decoration:none; font-weight:700;
+      background:var(--brand); color:var(--brandText); border:1px solid #138259;
     }
-    .cta:hover{transform:translateY(-2px); box-shadow:0 14px 34px rgba(39,192,125,.45)}
-    ul.points{list-style:none; padding:0; margin:16px 0 0; display:flex; gap:12px; justify-content:center; flex-wrap:wrap}
-    ul.points li{color:var(--muted); font-size:14px}
-    .dot{display:inline-block; width:6px; height:6px; border-radius:50%; background:var(--brand); margin:0 8px; vertical-align:middle}
-    .fine{color:var(--muted); font-size:12px; margin-top:16px}
-    footer{margin-top:18px}
-    footer a{color:#7cc6ff; text-decoration:none; font-size:12px}
+    .cta:focus,.cta:hover{outline:none; filter:brightness(0.98)}
+    .grid{display:grid; gap:16px; grid-template-columns:1fr}
+    @media(min-width:840px){ .grid{grid-template-columns:1fr 1fr} }
+    h3{font-size:16px; margin:4px 0 8px}
+    ul{margin:0; padding-left:18px; color:var(--muted)}
+    li{margin:6px 0}
+    .price{
+      display:inline-block; margin-top:8px; padding:6px 10px; border:1px solid var(--line); border-radius:8px; font-weight:700; color:#0f6a45;
+      background:#0bb36512;
+    }
+    footer{margin-top:18px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; color:var(--muted); font-size:12px}
+    footer a{color:#2563eb; text-decoration:none}
   </style>
 </head>
 <body>
-  <main class="wrap" role="main">
-    <h1>After-Hours Answering for Contractors</h1>
-    <p class="sub">We pick up after 5 pm, qualify every call, and live-transfer urgent revenue jobs. <br><strong>Only pay when you close.</strong></p>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="#">
+        <div class="logo" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M3 9h18v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9z" stroke="#0b1222" stroke-width="1.5"/>
+            <path d="M2 9l10-5 10 5" stroke="#0b1222" stroke-width="1.5"/>
+            <path d="M6 12h12M6 15h12" stroke="#0b1222" stroke-width="1.2"/>
+          </svg>
+        </div>
+        <div>
+          <h1>Joliet After-Hours Intake</h1>
+          <div class="tag">For local contractors</div>
+        </div>
+      </a>
+      <span class="price">Pay only when you close</span>
+    </header>
 
-    <!-- Single clear action -->
-    <a class="cta"
-       href="mailto:truszko1@gmail.com?subject=After-Hours%20Intake%20—%20Pay%20Per%20Closed%20Job&body=Company%20name%3A%20_____%0APhone%3A%20_____%0ACoverage%20days%3A%20_____%0ANotes%3A%20_____">
-      Get pilot details
-    </a>
+    <section class="panel">
+      <h2>Never miss after-hours calls</h2>
+      <p class="sub">We answer in 10 seconds, qualify every call, and live-transfer urgent revenue jobs. You only pay when you close.</p>
 
-    <!-- Three tiny proof points -->
-    <ul class="points" aria-label="Highlights">
-      <li>Answer in 10 seconds</li>
-      <li><span class="dot" aria-hidden="true"></span>Local 815/779 number</li>
-      <li><span class="dot" aria-hidden="true"></span>7 am summary with recordings</li>
-    </ul>
+      <a class="cta"
+         href="mailto:truszko1@gmail.com?subject=After-Hours%20Intake%20—%20Pay%20Per%20Closed%20Job&body=Company%20name%3A%20_____%0APhone%3A%20_____%0ACoverage%20days%3A%20_____%0ANotes%3A%20_____">
+        Get pilot details
+      </a>
 
-    <p class="fine">No long contracts. No setup fee. You confirm which jobs closed. We invoice weekly for those only.</p>
+      <div class="grid" style="margin-top:18px">
+        <div>
+          <h3>What you get</h3>
+          <ul>
+            <li>Local 815 or 779 line after 5 pm</li>
+            <li>Intake name, phone, address, issue, urgency</li>
+            <li>Live transfer only when it is real revenue</li>
+            <li>7 am email with counts and recordings</li>
+          </ul>
+        </div>
+        <div>
+          <h3>How it works</h3>
+          <ul>
+            <li>Email your routing rules</li>
+            <li>We assign your local number and turn on after-hours</li>
+            <li>You confirm closed jobs each week. We invoice only those</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
     <footer>
-      <!-- If you publish a privacy page later, link it here -->
-      <a href="#" aria-label="Privacy policy">Privacy</a>
+      <div>Want sample summaries • <a href="mailto:truszko1@gmail.com?subject=Sample%20Summaries%20Request">Email us</a></div>
+      <div><a href="#" aria-label="Privacy policy">Privacy</a></div>
     </footer>
-  </main>
+  </div>
 </body>
 </html>
